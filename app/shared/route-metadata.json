@@ -1,0 +1,81 @@
+{
+  "/": {
+    "title": "Lunacy Media | Mythology & Worldbuilding Studio",
+    "description": "Lunacy Media is a Toronto-based mythology and worldbuilding studio creating original IP, cultural narratives, music, and immersive digital experiences.",
+    "ogTitle": "Lunacy Media | Mythology & Worldbuilding Studio",
+    "ogDescription": "Original IP, mythology-driven branding, and worldbuilding across music, graphic novels, interactive experience, and cultural strategy.",
+    "h1": "Lunacy Media",
+    "eyebrow": "MYTHOLOGY & WORLDBUILDING STUDIO",
+    "intro": "Lunacy Media builds worlds, identities, and cultural narratives for artists, founders, and organizations who were never meant to be ordinary.",
+    "sections": [
+      { "heading": "Worlds with a point of view", "body": "We connect music, original IP, visual systems, and immersive experiences into coherent mythologies that people can enter and remember." }
+    ]
+  },
+  "/studio": {
+    "title": "Studio Services | Lunacy Media",
+    "description": "Explore Lunacy Media’s Toronto-based creative studio services, from narrative identity and worldbuilding to digital experiences, music, and creative direction.",
+    "ogTitle": "Studio Services | Lunacy Media",
+    "ogDescription": "Narrative identity, worldbuilding, digital experiences, music, and creative direction for culturally resonant brands and artists.",
+    "h1": "Studio Services",
+    "eyebrow": "LUNACY CREATIVE STUDIO",
+    "intro": "Lunacy develops foundational identities, narrative systems, and full creative ecosystems for work that needs to hold attention and meaning.",
+    "sections": [
+      { "heading": "Nebula — Foundational Identity", "body": "Strategic positioning, visual identity systems, brand guidelines, and logos for ideas in their first visible form." },
+      { "heading": "Neutron — Narrative Brand System", "body": "Web design, interactive experiences, user experience design, and technical implementation that give a story a durable structure." },
+      { "heading": "Nova — Full Creative Ecosystem", "body": "An integrated world of identity, mythology, characters, cultural strategy, and multi-disciplinary production." }
+    ]
+  },
+  "/work": {
+    "title": "The Trisomy | Lunacy Media Work",
+    "description": "Discover The Trisomy, Lunacy Media’s three-part music world exploring identity, memory, grief, inheritance, and becoming.",
+    "ogTitle": "The Trisomy | Lunacy Media",
+    "ogDescription": "Mulligan, Between the Last Letters, and Kalu Ram: three records forming one mythic autobiography.",
+    "h1": "The Trisomy",
+    "eyebrow": "MUSIC WORLD / TRILOGY",
+    "intro": "A life story split across identity, memory, grief, inheritance, and becoming. The albums are phases of one mythic autobiography rather than separate releases.",
+    "sections": [
+      { "heading": "A narrative architecture", "body": "Mulligan, Between the Last Letters, and Kalu Ram create a release language, symbolic vocabulary, and audience entry points built to hold evolution rather than only promotion." }
+    ]
+  },
+  "/worlds": {
+    "title": "Original Worlds | Lunacy Media",
+    "description": "Explore Lunacy Media original worlds across music, graphic novels, and immersive experiences, including The Trisomy, Obeah, and Tammy.",
+    "ogTitle": "Original Worlds | Lunacy Media",
+    "ogDescription": "Original intellectual property across music, graphic novels, and immersive experiences that continues to evolve across mediums.",
+    "h1": "Original Worlds",
+    "eyebrow": "ORIGINAL IP / MULTIMEDIA UNIVERSES",
+    "intro": "Lunacy develops original intellectual property as complete universes that exist across multiple mediums and keep evolving.",
+    "sections": [
+      { "heading": "The Trisomy", "body": "A three-part musical odyssey exploring identity, memory, and legacy through hip-hop, poetry, and worldbuilding." },
+      { "heading": "Obeah", "body": "A contemporary spiritual mythology reclaiming Caribbean and African tradition through graphic novel form." },
+      { "heading": "Tammy", "body": "An immersive psychological experience about misinformation, identity, and the systems that shape what people believe." }
+    ]
+  },
+  "/mythology": {
+    "title": "Lunacy Mythology | Lunacy Media",
+    "description": "Learn the story and core beliefs behind Lunacy Media: emotional truth, functional mythology, evolving identity, and creativity as an evolutionary force.",
+    "ogTitle": "Lunacy Mythology | Lunacy Media",
+    "ogDescription": "The story of Lunacy Media, its core beliefs, and the mythology behind its creative practice.",
+    "h1": "Lunacy Mythology",
+    "eyebrow": "ORIGIN / BELIEFS / VISION",
+    "intro": "Lunacy Media began as a long-term archive of evolution: a practice of building worlds that hold emotional truth, strategy, and collective possibility together.",
+    "sections": [
+      { "heading": "Emotional truth has structural power", "body": "The deepest truths about human experience can be encoded into systems, brands, and worlds." },
+      { "heading": "Mythology is functional, not fiction", "body": "Every identity and world operates through myths. Lunacy makes those frameworks visible and useful." },
+      { "heading": "Identity is continuously constructed", "body": "Creation is a way to reflect, revise, and intentionally reshape what comes next." }
+    ]
+  },
+  "/contact": {
+    "title": "Initiate a Project | Lunacy Media",
+    "description": "Contact Lunacy Media in Toronto to discuss mythology-led creative direction, original IP, identity systems, music, and immersive digital experiences.",
+    "ogTitle": "Initiate a Project | Lunacy Media",
+    "ogDescription": "Tell Lunacy Media what you are building, what feels unresolved, and what you want people to believe when they encounter your world.",
+    "h1": "Initiate a Project",
+    "eyebrow": "THE FIRST PAGE OF THE MYTHOS BRIEF",
+    "intro": "Tell us what you are building, what feels unresolved, and what you want people to believe when they encounter the world around your work.",
+    "sections": [
+      { "heading": "The Signal", "body": "Lunacy Media is based in Toronto, Ontario, Canada. Email: info@lunacymedia.ca." },
+      { "heading": "Response", "body": "Every signal is read with care. If the fit is there, you will hear back within 24 business hours." }
+    ]
+  }
+}

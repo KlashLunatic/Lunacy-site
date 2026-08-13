@@ -1,0 +1,13 @@
+# Dependency and build output
+/app/node_modules/
+/app/dist/
+/app/.manus-logs/
+
+# Archive extraction artifacts; the original export archive remains tracked.
+/lunacy-export/
+
+# Environment and editor files
+**/.env
+**/.env.*
+!.env.example
+.DS_Store

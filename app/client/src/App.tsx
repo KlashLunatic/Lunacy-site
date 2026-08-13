@@ -1,0 +1,63 @@
+import { Toaster } from "@/components/ui/sonner";
+import { TooltipProvider } from "@/components/ui/tooltip";
+import NotFound from "@/pages/NotFound";
+import { Route, Switch } from "wouter";
+import ErrorBoundary from "./components/ErrorBoundary";
+import RouteMetadata from "./components/RouteMetadata";
+import { ThemeProvider } from "./contexts/ThemeContext";
+import HomeImmersive from "./pages/HomeImmersive";
+import HomeOrbital from "./pages/HomeOrbital";
+import About from "./pages/About";
+import Services from "./pages/Services";
+import Portfolio from "./pages/Portfolio";
+import ObeahProject from "./pages/ObeahProject";
+import ReleasesProject from "./pages/ReleasesProject";
+import InteractiveWorlds from "./pages/InteractiveWorlds";
+import Contact from "./pages/Contact";
+
+function Router() {
+  // make sure to consider if you need authentication for certain routes
+  return (
+    <Switch>
+      <Route path={"/"} component={HomeOrbital} />
+      <Route path={"/studio"} component={Services} />
+      <Route path={"/work"} component={Portfolio} />
+      <Route path={"/worlds"} component={InteractiveWorlds} />
+      <Route path={"/mythology"} component={About} />
+      <Route path={"/about"} component={About} />
+      <Route path={"/services"} component={Services} />
+      <Route path={"/portfolio"} component={Portfolio} />
+      <Route path={"/obeah"} component={ObeahProject} />
+      <Route path={"/releases"} component={ReleasesProject} />
+      <Route path={"/interactive-worlds"} component={InteractiveWorlds} />
+      <Route path={"/contact"} component={Contact} />
+      <Route path={"/404"} component={NotFound} />
+      {/* Final fallback route */}
+      <Route component={NotFound} />
+    </Switch>
+  );
+}
+
+// NOTE: About Theme
+// - First choose a default theme according to your design style (dark or light bg), than change color palette in index.css
+//   to keep consistent foreground/background color across components
+// - If you want to make theme switchable, pass `switchable` ThemeProvider and use `useTheme` hook
+
+function App() {
+  return (
+    <ErrorBoundary>
+      <ThemeProvider
+        defaultTheme="dark"
+        // switchable
+      >
+        <TooltipProvider>
+          <RouteMetadata />
+          <Toaster />
+          <Router />
+        </TooltipProvider>
+      </ThemeProvider>
+    </ErrorBoundary>
+  );
+}
+
+export default App;
