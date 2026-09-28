@@ -65,6 +65,31 @@ export async function trackEvent(type: EventType, label: string, value?: string)
 }
 
 /**
+ * Load the Umami tracking script — but only when both env vars are configured.
+ *
+ * The values live in the hosting environment (e.g. Netlify env:
+ * VITE_ANALYTICS_ENDPOINT and VITE_ANALYTICS_WEBSITE_ID) and are intentionally
+ * absent from the repo. Without this guard the build emits unreplaced
+ * %VITE_*% placeholders and the client throws a pageerror on every page load.
+ */
+export function initUmami() {
+  if (typeof document === 'undefined') return;
+
+  const endpoint = import.meta.env.VITE_ANALYTICS_ENDPOINT as string | undefined;
+  const websiteId = import.meta.env.VITE_ANALYTICS_WEBSITE_ID as string | undefined;
+
+  if (!endpoint || !websiteId) return;
+  if (document.querySelector('script[data-umami-loaded]')) return;
+
+  const script = document.createElement('script');
+  script.defer = true;
+  script.src = `${endpoint.replace(/\/$/, '')}/umami`;
+  script.setAttribute('data-website-id', websiteId);
+  script.setAttribute('data-umami-loaded', 'true');
+  document.head.appendChild(script);
+}
+
+/**
  * Track a social media click
  */
 export function trackSocialClick(platform: 'instagram' | 'facebook' | 'linkedin') {

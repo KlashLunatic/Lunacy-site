@@ -10,26 +10,7 @@ export default function ObeahProject() {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
-      {/* Navigation */}
-      <header className="sticky top-0 z-50 border-b border-border bg-background/80 backdrop-blur-md">
-        <nav className="mx-auto max-w-6xl px-4 sm:px-8 py-4 flex items-center justify-between">
-          <a href="/" className="flex items-center gap-2 font-semibold text-base tracking-tight">
-            <img src="/lunacy-logo.png" alt="Lunacy Media" className="w-6 h-6" />
-            <span>Lunacy</span>
-          </a>
-          <div className="flex gap-8 items-center text-sm">
-            <a href="/about" className="hover:text-[#d4af37] transition duration-200">
-              About
-            </a>
-            <a href="/" className="hover:text-[#d4af37] transition duration-200">
-              Projects
-            </a>
-            <a href="/#contact" className="hover:text-[#d4af37] transition duration-200">
-              Contact
-            </a>
-          </div>
-        </nav>
-      </header>
+      
 
       {/* Hero Section */}
       <section className="relative overflow-hidden">
@@ -37,7 +18,7 @@ export default function ObeahProject() {
           className="absolute inset-0 bg-cover bg-center"
           style={{
             backgroundImage:
-              "url('https://private-us-east-1.manuscdn.com/sessionFile/ng4bi4XYYFsDp79XjIAkYH/sandbox/PvFOdco5Qvx5MRijGZzTDL-img-1_1771213498000_na1fn_b2JlYWgtaGVyby1kYXJr.png?x-oss-process=image/resize,w_1920,h_1920/format,webp/quality,q_80&Expires=1798761600&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUvbmc0Ymk0WFlZRnNEcDc5WGpJQWtZSC9zYW5kYm94L1B2Rk9kY281UXZ4NU1SaWpHWnpUREwtaW1nLTFfMTc3MTIxMzQ5ODAwMF9uYTFmbl9iMkpsWVdndGFHVnlieTFrWVhKci5wbmc+eC1vc3MtcHJvY2Vzcz1pbWFnZS9yZXNpemUsd18xOTIwLGhfMTkyMC9mb3JtYXQsd2VicC9xdWFsaXR5LHFfODAiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE3OTg3NjE2MDB9fX1dfQ__&Key-Pair-Id=K2HSFNDJXOU9YS&Signature=a37HNIgwTYjilM~0WQp09pEhJVCi954tmT4zOsCh~mLxW8A99RtGNKTbfFqPNMavW-J40DhTKQi-WT4~HlZUNdee3V~wrKEKDRHyYT-3Aop5n8f3rQs9SLc8~Ny-YO6fbE8Xhui0DNXMRkOMg3QuHIXqszlS1lfCDmgUVv9dkxYOMUQnezjJrsyWq9bEg75MKYziUjvmEkN6yasYR7nYtqEUfko4S697QpdnMAKls8MwA-7DdZCRbhCHtlVsjux~h~4vm0jW7twiNqpUJJtku16FojtzjmYbFwAbIxoXyLjH97mlks0c6NwOcN-cKUVEtYoF8iGpMRq14uVcVn9VBA__')",
+              "url(\'/images/moon-texture.webp\')",
           }}
         ></div>
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/30 to-background"></div>
@@ -213,13 +194,7 @@ export default function ObeahProject() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="border-t border-border bg-secondary/30">
-        <div className="mx-auto max-w-5xl px-4 sm:px-8 py-12 flex justify-between items-center flex-wrap gap-4 text-xs text-muted font-light">
-          <span>© {new Date().getFullYear()} Lunacy Media</span>
-          <span>Your Forever Endeavour</span>
-        </div>
-      </footer>
+      
     </div>
   );
 }

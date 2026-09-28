@@ -54,22 +54,7 @@ export default function HomeImmersive() {
   return (
     <div className="min-h-screen bg-black text-white overflow-hidden">
       <SectionTransitionOverlay />
-      {/* Navigation */}
-      <header className="fixed top-0 z-50 w-full border-b border-gray-800 bg-black/80 backdrop-blur-md">
-        <nav className="mx-auto max-w-7xl px-4 sm:px-8 py-4 flex items-center justify-between">
-          <a href="/" className="flex items-center gap-2 font-semibold text-base tracking-tight">
-            <div className="w-2.5 h-2.5 rounded-full bg-white"></div>
-            <span>Lunacy</span>
-          </a>
-          <div className="flex gap-8 items-center text-sm">
-            <a href="/services" className="hover:text-gray-400 transition duration-200">Services</a>
-            <a href="/portfolio" className="hover:text-gray-400 transition duration-200">Portfolio</a>
-            <a href="/" className="hover:text-gray-400 transition duration-200">Projects</a>
-            <a href="/about" className="hover:text-gray-400 transition duration-200">About</a>
-            <a href="/contact" className="hover:text-gray-400 transition duration-200">Contact</a>
-          </div>
-        </nav>
-      </header>
+      
 
       {/* Hero Section with Moon Animation */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden pt-16">
@@ -305,58 +290,7 @@ export default function HomeImmersive() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer 
-        className="relative py-16 px-4 sm:px-8 bg-black border-t border-gray-800"
-        data-transition="footer"
-        data-from-color="rgb(0, 0, 0)"
-        data-to-color="rgb(0, 0, 0)"
-      >
-        <div className="mx-auto max-w-6xl">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
-            <div>
-              <h4 className="text-sm font-semibold text-white mb-4 uppercase tracking-widest">Navigation</h4>
-              <ul className="space-y-2 text-gray-400 text-sm">
-                <li><a href="/about" className="hover:text-white transition-colors">About</a></li>
-                <li><a href="/services" className="hover:text-white transition-colors">Services</a></li>
-                <li><a href="/portfolio" className="hover:text-white transition-colors">Portfolio</a></li>
-                <li><a href="/contact" className="hover:text-white transition-colors">Contact</a></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="text-sm font-semibold text-white mb-4 uppercase tracking-widest">Projects</h4>
-              <ul className="space-y-2 text-gray-400 text-sm">
-                <li><a href="/" className="hover:text-white transition-colors">OBEAH</a></li>
-                <li><a href="/" className="hover:text-white transition-colors">Releases</a></li>
-                <li><a href="/" className="hover:text-white transition-colors">Interactive Worlds</a></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="text-sm font-semibold text-white mb-4 uppercase tracking-widest">Social</h4>
-              <ul className="space-y-2 text-gray-400 text-sm">
-                <li><a href="/" className="hover:text-white transition-colors">Instagram</a></li>
-                <li><a href="/" className="hover:text-white transition-colors">Twitter</a></li>
-                <li><a href="/" className="hover:text-white transition-colors">LinkedIn</a></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="text-sm font-semibold text-white mb-4 uppercase tracking-widest">Contact</h4>
-              <p className="text-gray-400 text-sm mb-4">hello@lunacymedia.com</p>
-              <a href="/contact" className="text-white hover:text-gray-300 transition-colors text-sm font-semibold">
-                Get in Touch →
-              </a>
-            </div>
-          </div>
-
-          <div className="border-t border-gray-800 pt-8 flex flex-col sm:flex-row items-center justify-between text-gray-500 text-sm">
-            <p>&copy; 2026 Lunacy Media. All rights reserved.</p>
-            <div className="flex gap-6 mt-4 sm:mt-0">
-              <a href="/" className="hover:text-white transition-colors">Privacy</a>
-              <a href="/" className="hover:text-white transition-colors">Terms</a>
-            </div>
-          </div>
-        </div>
-      </footer>
+      
 
       {/* Scroll Progress Bar */}
       <div

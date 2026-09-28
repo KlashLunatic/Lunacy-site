@@ -4,9 +4,9 @@ import NotFound from "@/pages/NotFound";
 import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import RouteMetadata from "./components/RouteMetadata";
+import SiteLayout from "./components/SiteLayout";
 import { ThemeProvider } from "./contexts/ThemeContext";
-import HomeImmersive from "./pages/HomeImmersive";
-import HomeOrbital from "./pages/HomeOrbital";
+import HomeLunar from "./pages/HomeLunar";
 import About from "./pages/About";
 import Services from "./pages/Services";
 import Portfolio from "./pages/Portfolio";
@@ -19,7 +19,7 @@ function Router() {
   // make sure to consider if you need authentication for certain routes
   return (
     <Switch>
-      <Route path={"/"} component={HomeOrbital} />
+      <Route path={"/"} component={HomeLunar} />
       <Route path={"/studio"} component={Services} />
       <Route path={"/work"} component={Portfolio} />
       <Route path={"/worlds"} component={InteractiveWorlds} />
@@ -53,7 +53,9 @@ function App() {
         <TooltipProvider>
           <RouteMetadata />
           <Toaster />
-          <Router />
+          <SiteLayout>
+            <Router />
+          </SiteLayout>
         </TooltipProvider>
       </ThemeProvider>
     </ErrorBoundary>

@@ -1,6 +1,19 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+@theme {
+  --font-display: "Cormorant Garamond", "Georgia", serif;
+  --font-cinzel: "Cinzel", "Georgia", serif;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+
+  --color-coal: #000000;
+  --color-bone: #f2ede3;
+  --color-mist: #b9b3a7;
+  --color-gold: #d4af37;
+  --color-gold-deep: #a8842c;
+  --color-gold-pale: #f6e27a;
+}
+
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
@@ -53,7 +66,7 @@
   --chart-4: #d4af37;
   --chart-5: #d4af37;
   --radius: 0.65rem;
-  --background: #0a0a0a;
+  --background: #000000;
   --foreground: #f5f5f5;
   --card: #1a1a1a;
   --card-foreground: #f5f5f5;
@@ -83,7 +96,7 @@
   --primary-foreground: #0a0a0a;
   --sidebar-primary: #d4af37;
   --sidebar-primary-foreground: #0a0a0a;
-  --background: #0a0a0a;
+  --background: #000000;
   --foreground: #f5f5f5;
   --card: #1a1a1a;
   --card-foreground: #f5f5f5;
@@ -536,4 +549,84 @@ a:hover::before, button:hover::before {
 
 .glow-border {
   animation: glowBorder 2s ease-in-out infinite;
+}
+
+/* ============ Lunar elevation pass — reflective golds, giant moon ============ */
+
+/* The giant background moon's motion is driven by JavaScript (see
+   GiantMoon.tsx): a slow ambient spin plus scroll-coupled rotation and a
+   scroll-driven lunar cycle. Transform-only so it stays composited on the
+   GPU; the reduced-motion query below freezes it to a static full moon. */
+.giant-moon-disc {
+  box-shadow:
+    0 0 140px 30px rgba(216, 205, 180, 0.10),
+    0 0 420px 140px rgba(0, 0, 0, 0.55);
+  will-change: transform;
+}
+
+/* Reflective gold text — a slow sheen drifting across a metallic gradient.
+   Reserve for hero accents and the big stat numerals, not body copy. */
+@keyframes gold-sheen {
+  to {
+    background-position: 200% center;
+  }
+}
+
+.text-gold-shine {
+  background: linear-gradient(
+    100deg,
+    #8a6d1f 0%,
+    #d4af37 22%,
+    #f9ecb8 40%,
+    #d4af37 58%,
+    #8a6d1f 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: gold-sheen 8s linear infinite;
+}
+
+/* Scroll reveal — paired with the <Reveal> component */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition:
+    opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Editorial card hover — lift with a warm gold shadow */
+.card-lift {
+  transition:
+    transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.45s ease,
+    box-shadow 0.45s ease;
+}
+
+.card-lift:hover {
+  transform: translateY(-6px);
+  border-color: rgba(212, 175, 55, 0.45);
+  box-shadow: 0 24px 60px -24px rgba(212, 175, 55, 0.25);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .text-gold-shine {
+    /* static metallic gradient when motion is off */
+    background: linear-gradient(100deg, #a8842c, #f6e27a 50%, #a8842c);
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
 }

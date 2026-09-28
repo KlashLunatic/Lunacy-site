@@ -45,26 +45,7 @@ export default function InteractiveWorlds() {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
-      {/* Navigation */}
-      <header className="sticky top-0 z-50 border-b border-border bg-background/80 backdrop-blur-md">
-        <nav className="mx-auto max-w-6xl px-4 sm:px-8 py-4 flex items-center justify-between">
-          <a href="/" className="flex items-center gap-2 font-semibold text-base tracking-tight">
-            <img src="/lunacy-logo.png" alt="Lunacy Media" className="w-6 h-6" />
-            <span>Lunacy</span>
-          </a>
-          <div className="flex gap-8 items-center text-sm">
-            <a href="/about" className="hover:text-[#d4af37] transition duration-200">
-              About
-            </a>
-            <a href="/" className="hover:text-[#d4af37] transition duration-200">
-              Projects
-            </a>
-            <a href="/#contact" className="hover:text-[#d4af37] transition duration-200">
-              Contact
-            </a>
-          </div>
-        </nav>
-      </header>
+      
 
       {/* Hero Section */}
       <section className="relative overflow-hidden">
@@ -72,19 +53,19 @@ export default function InteractiveWorlds() {
           className="absolute inset-0 bg-cover bg-center"
           style={{
             backgroundImage:
-              "url('https://private-us-east-1.manuscdn.com/sessionFile/ng4bi4XYYFsDp79XjIAkYH/sandbox/PvFOdco5Qvx5MRijGZzTDL-img-3_1771213487000_na1fn_dGFtbXktaGVyby1pbnRlcmFjdGl2ZQ.png?x-oss-process=image/resize,w_1920,h_1920/format,webp/quality,q_80&Expires=1798761600&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUvbmc0Ymk0WFlZRnNEcDc5WGpJQWtZSC9zYW5kYm94L1B2Rk9kY281UXZ4NU1SaWpHWnpUREwtaW1nLTNfMTc3MTIxMzQ4NzAwMF9uYTFmbl9kR0Z0YlhrdGFHVnlieTFwYm5SbGNtRmpkR2wyWlEucG5nP3gtb3NzLXByb2Nlc3M9aW1hZ2UvcmVzaXplLHdfMTkyMCxoXzE5MjAvZm9ybWF0LHdlYnAvcXVhbGl0eSxxXzgwIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNzk4NzYxNjAwfX19XX0_&Key-Pair-Id=K2HSFNDJXOU9YS&Signature=cxAyYGgEkVznpbAOpR66H3gyBzKdNOMEzpOCKXzR2TXRStcS47GD3PWRXS91qbFv3KrDurVuNwyBWXJMoqqb2FxZK3uoBPe6lnjfFuV3ioA9WvdH-WwSco0A728q6GBlRsLfyj6CqdloXVaKo-q7OrJjWtahDv4cjsv9BE8CVs7T28KMaM5J6II3nHE~qjKFmxkAxzwv7~lk9DuTMT2eGM6ZULzr6QgF6ovzri4FWVv3K2ambjLuZCozG0I6DS7zofMQobtvSCWPP5cfbqTKCM3sjjatZ6~TqKvLAls1pYlpiSCzbs72B7aiaehp7Ud2tfemBS3nnTjBjzlgtG0G9w__')",
+              "url(\'/images/worlds-hero.webp\')",
           }}
         ></div>
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/30 to-background"></div>
 
         <div className="relative mx-auto max-w-5xl px-4 sm:px-8 py-40 text-center">
-          <p className="text-xs uppercase tracking-widest text-muted mb-6 font-medium">
-            Immersive Digital Experiences
+          <p className="font-cinzel text-xs font-semibold tracking-[0.28em] text-gold mb-6">
+            Original Worlds
           </p>
-          <h1 className="text-5xl sm:text-6xl md:text-7xl font-light mb-6 leading-tight tracking-tight">
+          <h1 className="font-display text-5xl sm:text-6xl md:text-7xl font-medium mb-6 leading-[1.08] text-bone text-balance">
             Interactive Worlds
           </h1>
-          <p className="text-lg text-muted max-w-2xl mx-auto mb-12 font-light leading-relaxed">
+          <p className="text-lg text-mist max-w-2xl mx-auto mb-12 leading-relaxed">
             Explore the Lunacy universe through immersive, AI-driven interactive experiences designed for Gen Z audiences and funder-ready deliverables.
           </p>
           <div className="flex gap-4 justify-center flex-wrap">
@@ -103,7 +84,7 @@ export default function InteractiveWorlds() {
 
       {/* Projects Grid */}
       <section className="mx-auto max-w-5xl px-4 sm:px-8 py-24">
-        <h2 className="text-3xl font-light mb-16 tracking-tight">Active & Planned Projects</h2>
+        <h2 className="font-display text-4xl font-medium mb-16 text-bone">Active & Planned Projects</h2>
 
         <div className="space-y-12">
           {projects.map((project, idx) => (
@@ -140,11 +121,11 @@ export default function InteractiveWorlds() {
 
       {/* Target Audience */}
       <section className="mx-auto max-w-5xl px-4 sm:px-8 py-24 border-t border-border">
-        <h2 className="text-3xl font-light mb-12 tracking-tight">Designed For</h2>
+        <h2 className="font-display text-4xl font-medium mb-12 text-bone">Designed For</h2>
 
         <div className="grid md:grid-cols-2 gap-12">
           <div>
-            <h3 className="text-lg font-medium mb-6">Primary Audience</h3>
+            <h3 className="font-display text-2xl font-medium mb-6 text-bone">Primary Audience</h3>
             <ul className="text-muted text-sm font-light space-y-3">
               <li>Ages 16–35</li>
               <li>Fans of immersive storytelling</li>
@@ -154,7 +135,7 @@ export default function InteractiveWorlds() {
           </div>
 
           <div>
-            <h3 className="text-lg font-medium mb-6">Secondary Audience</h3>
+            <h3 className="font-display text-2xl font-medium mb-6 text-bone">Secondary Audience</h3>
             <ul className="text-muted text-sm font-light space-y-3">
               <li>Creative communities</li>
               <li>Early adopters of experimental digital media</li>
@@ -167,11 +148,11 @@ export default function InteractiveWorlds() {
 
       {/* Core Mechanics */}
       <section className="mx-auto max-w-5xl px-4 sm:px-8 py-24 border-t border-border">
-        <h2 className="text-3xl font-light mb-12 tracking-tight">Core Mechanics</h2>
+        <h2 className="font-display text-4xl font-medium mb-12 text-bone">Core Mechanics</h2>
 
         <div className="grid md:grid-cols-2 gap-12">
           <div>
-            <h3 className="text-lg font-medium mb-6">Interactive Systems</h3>
+            <h3 className="font-display text-2xl font-medium mb-6 text-bone">Interactive Systems</h3>
             <ul className="text-muted text-sm font-light space-y-3">
               <li>Interactive lobby and exploration system</li>
               <li>Branching narrative scenes</li>
@@ -181,7 +162,7 @@ export default function InteractiveWorlds() {
           </div>
 
           <div>
-            <h3 className="text-lg font-medium mb-6">Expansion Potential</h3>
+            <h3 className="font-display text-2xl font-medium mb-6 text-bone">Expansion Potential</h3>
             <ul className="text-muted text-sm font-light space-y-3">
               <li>Modular expansion system</li>
               <li>Visual environments</li>
@@ -194,11 +175,11 @@ export default function InteractiveWorlds() {
 
       {/* Development Roadmap */}
       <section className="mx-auto max-w-5xl px-4 sm:px-8 py-24 border-t border-border">
-        <h2 className="text-3xl font-light mb-16 tracking-tight">Development Roadmap</h2>
+        <h2 className="font-display text-4xl font-medium mb-16 text-bone">Development Roadmap</h2>
 
         <div className="space-y-8">
           <div className="border-l-2 border-[#d4af37] pl-8">
-            <h3 className="text-lg font-medium mb-4">TAMMY MVP</h3>
+            <h3 className="font-display text-xl font-medium mb-4 text-bone">TAMMY MVP</h3>
             <p className="text-muted text-sm font-light mb-3">
               The first interactive world — an AI-driven guide introducing visitors to the Lunacy universe through conversation, exploration, and narrative progression.
             </p>
@@ -206,7 +187,7 @@ export default function InteractiveWorlds() {
           </div>
 
           <div className="border-l-2 border-[#d4af37] pl-8">
-            <h3 className="text-lg font-medium mb-4">OBEAH Interactive Archive</h3>
+            <h3 className="font-display text-xl font-medium mb-4 text-bone">OBEAH Interactive Archive</h3>
             <p className="text-muted text-sm font-light mb-3">
               An immersive expansion allowing deep exploration of the OBEAH graphic novel universe with visual environments and symbolic archives.
             </p>
@@ -214,7 +195,7 @@ export default function InteractiveWorlds() {
           </div>
 
           <div className="border-l-2 border-[#d4af37] pl-8">
-            <h3 className="text-lg font-medium mb-4">Lunacy World Platform</h3>
+            <h3 className="font-display text-xl font-medium mb-4 text-bone">Lunacy World Platform</h3>
             <p className="text-muted text-sm font-light mb-3">
               A long-term unified platform connecting all projects, enabling cross-narrative exploration and community collaboration.
             </p>
@@ -244,13 +225,7 @@ export default function InteractiveWorlds() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="border-t border-border bg-secondary/30">
-        <div className="mx-auto max-w-5xl px-4 sm:px-8 py-12 flex justify-between items-center flex-wrap gap-4 text-xs text-muted font-light">
-          <span>© {new Date().getFullYear()} Lunacy Media</span>
-          <span>Your Forever Endeavour</span>
-        </div>
-      </footer>
+      
     </div>
   );
 }

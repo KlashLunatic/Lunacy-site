@@ -58,9 +58,10 @@ export function MoonAnimation({ scrollProgress = 0, phaseVisibility = 1, isClick
     };
 
     let canvasSize = setupCanvas();
-    window.addEventListener('resize', () => {
+    const onResize = () => {
       canvasSize = setupCanvas();
-    });
+    };
+    window.addEventListener('resize', onResize);
 
     const centerX = canvasSize.w / 2;
     const centerY = canvasSize.h / 2;
@@ -250,8 +251,8 @@ export function MoonAnimation({ scrollProgress = 0, phaseVisibility = 1, isClick
       ctx.fill();
     };
 
-    // Animation loop
-    const animate = () => {
+    // Draw a single frame for the current phase
+    const drawFrame = () => {
       // Clear canvas
       ctx.fillStyle = '#000000';
       ctx.fillRect(0, 0, canvasSize.w, canvasSize.h);
@@ -291,19 +292,28 @@ export function MoonAnimation({ scrollProgress = 0, phaseVisibility = 1, isClick
       }
 
       ctx.globalAlpha = 1;
-
-      animationRef.current = requestAnimationFrame(animate);
     };
 
-    animate();
+    // Respect users who prefer reduced motion: paint one static frame, no loop.
+    const reduceMotion =
+      typeof window.matchMedia === 'function' &&
+      window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (reduceMotion) {
+      drawFrame();
+    } else {
+      const animate = () => {
+        drawFrame();
+        animationRef.current = requestAnimationFrame(animate);
+      };
+      animate();
+    }
 
     return () => {
       if (animationRef.current) {
         cancelAnimationFrame(animationRef.current);
       }
-      window.removeEventListener('resize', () => {
-        canvasSize = setupCanvas();
-      });
+      window.removeEventListener('resize', onResize);
     };
   }, [phaseVisibility]); // Only depend on visibility, not scrollProgress
 

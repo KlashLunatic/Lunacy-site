@@ -42,32 +42,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
-      {/* Navigation */}
-      <header className="sticky top-0 z-50 border-b border-border bg-background/80 backdrop-blur-md">
-        <nav className="mx-auto max-w-7xl px-4 sm:px-8 py-4 flex items-center justify-between">
-          <a href="/" className="flex items-center gap-2 font-semibold text-base tracking-tight">
-            <img src="/lunacy-logo.svg" alt="Lunacy" className="w-6 h-6" />
-            <span>Lunacy</span>
-          </a>
-          <div className="flex gap-8 items-center text-sm">
-            <a href="/services" className="hover:text-accent transition duration-200">
-              Services
-            </a>
-            <a href="/portfolio" className="hover:text-accent transition duration-200">
-              Portfolio
-            </a>
-            <a href="/projects" className="hover:text-accent transition duration-200">
-              Projects
-            </a>
-            <a href="/about" className="hover:text-accent transition duration-200">
-              About
-            </a>
-            <a href="/contact" className="hover:text-accent transition duration-200">
-              Contact
-            </a>
-          </div>
-        </nav>
-      </header>
+      
 
       {/* Hero Section */}
       <section className="relative overflow-hidden h-screen flex items-center justify-center">
@@ -273,107 +248,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="border-t border-border py-12 px-4 sm:px-8 bg-card/30">
-        <div className="mx-auto max-w-6xl">
-          <div className="grid md:grid-cols-4 gap-8 mb-8">
-            <div>
-              <h3 className="font-semibold mb-4">Studio</h3>
-              <ul className="space-y-2 text-sm text-muted-foreground">
-                <li>
-                  <a href="/about" className="hover:text-accent transition">
-                    About
-                  </a>
-                </li>
-                <li>
-                  <a href="/services" className="hover:text-accent transition">
-                    Services
-                  </a>
-                </li>
-                <li>
-                  <a href="/portfolio" className="hover:text-accent transition">
-                    Portfolio
-                  </a>
-                </li>
-              </ul>
-            </div>
-
-            <div>
-              <h3 className="font-semibold mb-4">Projects</h3>
-              <ul className="space-y-2 text-sm text-muted-foreground">
-                <li>
-                  <a href="/obeah" className="hover:text-accent transition">
-                    OBEAH
-                  </a>
-                </li>
-                <li>
-                  <a href="/releases" className="hover:text-accent transition">
-                    Releases
-                  </a>
-                </li>
-                <li>
-                  <a href="/interactive-worlds" className="hover:text-accent transition">
-                    Interactive Worlds
-                  </a>
-                </li>
-              </ul>
-            </div>
-
-            <div>
-              <h3 className="font-semibold mb-4">Connect</h3>
-              <ul className="space-y-2 text-sm text-muted-foreground">
-                <li>
-                  <a href="/contact" className="hover:text-accent transition">
-                    Contact
-                  </a>
-                </li>
-                <li>
-                  <a href="mailto:hello@lunacymedia.ca" className="hover:text-accent transition">
-                    Email
-                  </a>
-                </li>
-              </ul>
-            </div>
-
-            <div>
-              <h3 className="font-semibold mb-4">Follow</h3>
-              <div className="flex gap-4">
-                <a
-                  href="https://www.instagram.com/lunacy_media/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-muted-foreground hover:text-accent transition"
-                  onClick={() => trackSocialClick("instagram")}
-                >
-                  <Instagram className="w-5 h-5" />
-                </a>
-                <a
-                  href="https://www.facebook.com/profile.php?id=61577277770199"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-muted-foreground hover:text-accent transition"
-                  onClick={() => trackSocialClick("facebook")}
-                >
-                  <Facebook className="w-5 h-5" />
-                </a>
-                <a
-                  href="https://www.linkedin.com/company/lunacy-media/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-muted-foreground hover:text-accent transition"
-                  onClick={() => trackSocialClick("linkedin")}
-                >
-                  <Linkedin className="w-5 h-5" />
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div className="border-t border-border pt-8 text-center text-sm text-muted-foreground">
-            <p>&copy; 2026 Lunacy Media. All rights reserved.</p>
-          </div>
-        </div>
-      </footer>
+      
     </div>
   );
 }

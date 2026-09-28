@@ -1,15 +1,13 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { ArrowRight } from "lucide-react";
-import { useState, useRef } from "react";
+import { useState } from "react";
 import { trpc } from "@/lib/trpc";
 import { toast } from "sonner";
 import { trackEvent } from "@/lib/analytics";
-import { useScrollReveal } from "@/hooks/useScrollReveal";
+import { CONTACT_EMAIL } from "@/lib/site";
 
 export default function Contact() {
-  const formRef = useRef<HTMLElement>(null);
-  const { style: formStyle } = useScrollReveal(formRef, { type: 'slideUp', duration: 800 });
   const contactMutation = trpc.contact.submit.useMutation();
 
   const [formData, setFormData] = useState({
@@ -24,20 +22,18 @@ export default function Contact() {
   const [showSuccess, setShowSuccess] = useState(false);
 
   const projectTypes = [
-    "Experiential Marketing",
-    "Digital Campaign",
-    "Audio Branding",
-    "Social Media Strategy",
-    "Creative Direction",
-    "Event Production",
-    "Other",
+    "Mythos Audit",
+    "Narrative System",
+    "World Build",
+    "Ongoing Direction",
+    "Something else",
   ];
 
   const budgetRanges = [
-    "$5K - $15K",
-    "$15K - $50K",
-    "$50K - $100K",
-    "$100K+",
+    "Under $1,000",
+    "$1,000 – $5,000",
+    "$5,000 – $15,000",
+    "$15,000+",
     "Not sure yet",
   ];
 
@@ -90,64 +86,47 @@ export default function Contact() {
   };
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
-      {/* Navigation */}
-      <header className="sticky top-0 z-50 border-b border-border bg-background/80 backdrop-blur-md">
-        <nav className="mx-auto max-w-6xl px-4 sm:px-8 py-4 flex items-center justify-between">
-          <a href="/" className="flex items-center gap-2 font-semibold text-base tracking-tight">
-            <img src="/lunacy-logo.png" alt="Lunacy" className="w-6 h-6" />
-            <span>Lunacy</span>
-          </a>
-          <div className="flex gap-8 items-center text-sm">
-            <a href="/about" className="hover:text-[#d4af37] transition duration-200">
-              About
-            </a>
-            <a href="/services" className="hover:text-[#d4af37] transition duration-200">
-              Services
-            </a>
-            <a href="/portfolio" className="hover:text-[#d4af37] transition duration-200">
-              Portfolio
-            </a>
-            <a href="/" className="hover:text-[#d4af37] transition duration-200">
-              Projects
-            </a>
-            <a href="/contact" className="text-[#d4af37]">
-              Contact
-            </a>
-          </div>
-        </nav>
-      </header>
-
-      {/* Hero Section */}
-      <section className="py-20 sm:py-32 bg-white">
-        <div className="mx-auto max-w-2xl px-4 sm:px-8 text-center">
-          <div className="animate-fade-in-up">
-            <p className="text-sm font-light tracking-widest text-[#d4af37] mb-4">GET IN TOUCH</p>
-            <h1 className="text-5xl sm:text-6xl font-light tracking-tight mb-6">
-              Let's Create Together
-            </h1>
-            <p className="text-lg text-gray-600 max-w-xl mx-auto">
-              Have a project in mind? We'd love to hear about it. Fill out the form below and we'll get back to you within 48 hours.
-            </p>
-          </div>
+    <div className="bg-coal text-bone">
+      {/* Compact hero — the form follows immediately, no dead scroll */}
+      <section className="relative overflow-hidden">
+        <div
+          className="absolute inset-0 bg-cover bg-center opacity-25"
+          style={{ backgroundImage: "url('/images/moon-texture.webp')" }}
+          aria-hidden="true"
+        />
+        <div
+          className="absolute inset-0 bg-gradient-to-b from-coal/60 via-coal/70 to-coal"
+          aria-hidden="true"
+        />
+        <div className="relative mx-auto max-w-2xl px-4 pb-10 pt-16 text-center sm:px-8 sm:pt-20">
+          <p className="font-cinzel text-xs font-semibold tracking-[0.28em] text-gold">
+            Begin
+          </p>
+          <h1 className="mt-6 font-display text-5xl font-medium leading-[1.08] text-bone sm:text-6xl text-balance">
+            Initiate
+          </h1>
+          <p className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-mist">
+            Tell us where you are and where the work needs to go. We reply
+            within 24 business hours.
+          </p>
         </div>
       </section>
 
       {/* Contact Form Section */}
-      <section ref={formRef} className="py-20 sm:py-32 bg-background">
+      <section className="pb-24">
         <div className="mx-auto max-w-2xl px-4 sm:px-8">
           {showSuccess && (
-            <div className="mb-8 p-6 bg-green-50 border border-green-200 rounded-lg animate-fade-in-up">
-              <p className="text-green-800 font-light">
-                Thank you for reaching out! We've received your message and will be in touch soon.
+            <div className="mb-8 rounded-xl border border-green-500/30 bg-green-950/40 p-6">
+              <p className="text-green-200">
+                Thank you for reaching out! We&rsquo;ve received your message
+                and will be in touch soon.
               </p>
             </div>
           )}
 
-          <form onSubmit={handleSubmit} className="space-y-6 animate-fade-in-up">
-            {/* Name */}
+          <form onSubmit={handleSubmit} className="space-y-6">
             <div>
-              <label htmlFor="name" className="block text-sm font-light mb-2">
+              <label htmlFor="name" className="mb-2 block text-sm text-mist">
                 Your Name *
               </label>
               <Input
@@ -156,15 +135,14 @@ export default function Contact() {
                 name="name"
                 value={formData.name}
                 onChange={handleChange}
-                placeholder="Kailash"
-                className="w-full px-4 py-3 border border-border rounded-lg focus:outline-none focus:border-[#d4af37] transition"
+                placeholder="Your name"
+                className="w-full border-white/15 bg-black/40 px-4 py-3 text-bone placeholder:text-mist/50 focus:border-gold"
                 required
               />
             </div>
 
-            {/* Email */}
             <div>
-              <label htmlFor="email" className="block text-sm font-light mb-2">
+              <label htmlFor="email" className="mb-2 block text-sm text-mist">
                 Email Address *
               </label>
               <Input
@@ -174,24 +152,23 @@ export default function Contact() {
                 value={formData.email}
                 onChange={handleChange}
                 placeholder="you@example.com"
-                className="w-full px-4 py-3 border border-border rounded-lg focus:outline-none focus:border-[#d4af37] transition"
+                className="w-full border-white/15 bg-black/40 px-4 py-3 text-bone placeholder:text-mist/50 focus:border-gold"
                 required
               />
             </div>
 
-            {/* Project Type */}
             <div>
-              <label htmlFor="projectType" className="block text-sm font-light mb-2">
-                Project Type
+              <label htmlFor="projectType" className="mb-2 block text-sm text-mist">
+                What are you looking for?
               </label>
               <select
                 id="projectType"
                 name="projectType"
                 value={formData.projectType}
                 onChange={handleChange}
-                className="w-full px-4 py-3 border border-border rounded-lg focus:outline-none focus:border-[#d4af37] transition bg-background text-foreground"
+                className="w-full rounded-lg border border-white/15 bg-black/40 px-4 py-3 text-bone focus:border-gold focus:outline-none"
               >
-                <option value="">Select a project type</option>
+                <option value="">Select a stage</option>
                 {projectTypes.map((type) => (
                   <option key={type} value={type}>
                     {type}
@@ -200,9 +177,8 @@ export default function Contact() {
               </select>
             </div>
 
-            {/* Budget Range */}
             <div>
-              <label htmlFor="budgetRange" className="block text-sm font-light mb-2">
+              <label htmlFor="budgetRange" className="mb-2 block text-sm text-mist">
                 Budget Range
               </label>
               <select
@@ -210,9 +186,9 @@ export default function Contact() {
                 name="budgetRange"
                 value={formData.budgetRange}
                 onChange={handleChange}
-                className="w-full px-4 py-3 border border-border rounded-lg focus:outline-none focus:border-[#d4af37] transition bg-background text-foreground"
+                className="w-full rounded-lg border border-white/15 bg-black/40 px-4 py-3 text-bone focus:border-gold focus:outline-none"
               >
-                <option value="">Select a budget range</option>
+                <option value="">Select a range</option>
                 {budgetRanges.map((range) => (
                   <option key={range} value={range}>
                     {range}
@@ -221,9 +197,8 @@ export default function Contact() {
               </select>
             </div>
 
-            {/* Message */}
             <div>
-              <label htmlFor="message" className="block text-sm font-light mb-2">
+              <label htmlFor="message" className="mb-2 block text-sm text-mist">
                 Message *
               </label>
               <textarea
@@ -233,99 +208,39 @@ export default function Contact() {
                 onChange={handleChange}
                 placeholder="Tell us about your project, vision, or collaboration idea..."
                 rows={6}
-                className="w-full px-4 py-3 border border-border rounded-lg focus:outline-none focus:border-[#d4af37] transition resize-none"
+                className="w-full resize-none rounded-lg border border-white/15 bg-black/40 px-4 py-3 text-bone placeholder:text-mist/50 focus:border-gold focus:outline-none"
                 required
               />
             </div>
 
-            {/* Submit Button */}
             <Button
               type="submit"
               disabled={isSubmitting}
-              className="w-full bg-[#d4af37] text-black hover:bg-[#c9a02d] rounded-full py-6 text-lg font-light disabled:opacity-50"
+              className="w-full rounded-full border border-gold/60 bg-transparent py-6 text-lg font-medium text-gold hover:border-gold hover:bg-gold hover:text-coal disabled:opacity-50"
             >
-              {isSubmitting ? "Sending..." : "Send Message"} <ArrowRight className="ml-2 w-5 h-5" />
+              {isSubmitting ? "Sending..." : "Send Message"}{" "}
+              <ArrowRight className="ml-2 h-5 w-5" aria-hidden="true" />
             </Button>
 
-            <p className="text-xs text-gray-600 text-center">
-              * Required fields. We respect your privacy and will only use your information to respond to your inquiry.
+            <p className="text-center text-xs text-mist/70">
+              * Required fields. We respect your privacy and will only use your
+              information to respond to your inquiry.
             </p>
           </form>
 
-          {/* Alternative Contact Methods */}
-          <div className="mt-16 pt-16 border-t border-border">
-            <h3 className="text-2xl font-light mb-8 text-center">Other Ways to Reach Us</h3>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-              <div>
-                <p className="text-sm text-[#d4af37] font-light mb-2">Email</p>
-                <a href="mailto:hello@lunacymedia.ca" className="text-gray-600 hover:text-[#d4af37] transition">
-                  hello@lunacymedia.ca
-                </a>
-              </div>
-              <div>
-                <p className="text-sm text-[#d4af37] font-light mb-2">Instagram</p>
-                <a
-                  href="https://www.instagram.com/lunacy_media/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-600 hover:text-[#d4af37] transition"
-                >
-                  @lunacy_media
-                </a>
-              </div>
-              <div>
-                <p className="text-sm text-[#d4af37] font-light mb-2">LinkedIn</p>
-                <a
-                  href="https://www.linkedin.com/company/lunacy-media/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-600 hover:text-[#d4af37] transition"
-                >
-                  Lunacy Media
-                </a>
-              </div>
-            </div>
+          <div className="mt-16 border-t border-white/10 pt-12 text-center">
+            <p className="font-cinzel text-xs font-semibold tracking-[0.28em] text-gold">
+              Prefer Email
+            </p>
+            <a
+              href={`mailto:${CONTACT_EMAIL}`}
+              className="mt-4 inline-block font-display text-2xl italic text-bone transition hover:text-gold"
+            >
+              {CONTACT_EMAIL}
+            </a>
           </div>
         </div>
       </section>
-
-      {/* Footer */}
-      <footer className="border-t border-border py-12 bg-white">
-        <div className="mx-auto max-w-6xl px-4 sm:px-8">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-8">
-            <p className="text-sm text-gray-600">© 2026 Lunacy Media. All rights reserved.</p>
-            <div className="flex gap-6">
-              <a
-                href="https://www.instagram.com/lunacy_media/"
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={() => trackEvent("social_click", "social_instagram", "instagram")}
-                className="text-gray-600 hover:text-[#d4af37] transition duration-200"
-              >
-                Instagram
-              </a>
-              <a
-                href="https://www.facebook.com/profile.php?id=61577277770199"
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={() => trackEvent("social_click", "social_facebook", "facebook")}
-                className="text-gray-600 hover:text-[#d4af37] transition duration-200"
-              >
-                Facebook
-              </a>
-              <a
-                href="https://www.linkedin.com/company/lunacy-media/"
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={() => trackEvent("social_click", "social_linkedin", "linkedin")}
-                className="text-gray-600 hover:text-[#d4af37] transition duration-200"
-              >
-                LinkedIn
-              </a>
-            </div>
-          </div>
-        </div>
-      </footer>
     </div>
   );
 }

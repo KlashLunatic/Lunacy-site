@@ -35,26 +35,7 @@ export default function ReleasesProject() {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
-      {/* Navigation */}
-      <header className="sticky top-0 z-50 border-b border-border bg-background/80 backdrop-blur-md">
-        <nav className="mx-auto max-w-6xl px-4 sm:px-8 py-4 flex items-center justify-between">
-          <a href="/" className="flex items-center gap-2 font-semibold text-base tracking-tight">
-            <img src="/lunacy-logo.png" alt="Lunacy Media" className="w-6 h-6" />
-            <span>Lunacy</span>
-          </a>
-          <div className="flex gap-8 items-center text-sm">
-            <a href="/about" className="hover:text-[#d4af37] transition duration-200">
-              About
-            </a>
-            <a href="/" className="hover:text-[#d4af37] transition duration-200">
-              Projects
-            </a>
-            <a href="/#contact" className="hover:text-[#d4af37] transition duration-200">
-              Contact
-            </a>
-          </div>
-        </nav>
-      </header>
+      
 
       {/* Hero Section */}
       <section className="relative overflow-hidden">
@@ -62,7 +43,7 @@ export default function ReleasesProject() {
           className="absolute inset-0 bg-cover bg-center"
           style={{
             backgroundImage:
-              "url('https://private-us-east-1.manuscdn.com/sessionFile/ng4bi4XYYFsDp79XjIAkYH/sandbox/PvFOdco5Qvx5MRijGZzTDL-img-2_1771213482000_na1fn_cmVsZWFzZXMtaGVyby1hYnN0cmFjdA.png?x-oss-process=image/resize,w_1920,h_1920/format,webp/quality,q_80&Expires=1798761600&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUvbmc0Ymk0WFlZRnNEcDc5WGpJQWtZSC9zYW5kYm94L1B2Rk9kY281UXZ4NU1SaWpHWnpUREwtaW1nLTJfMTc3MTIxMzQ4MjAwMF9uYTFmbl9jbVZzWldGelpYTXRhR1Z5YnkxaFluTjBjbUZqZEEucG5nP3gtb3NzLXByb2Nlc3M9aW1hZ2UvcmVzaXplLHdfMTkyMCxoXzE5MjAvZm9ybWF0LHdlYnAvcXVhbGl0eSxxXzgwIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNzk4NzYxNjAwfX19XX0_&Key-Pair-Id=K2HSFNDJXOU9YS&Signature=UkEOfTlBBcCdNuyoFfqPJVywc6y6ud9oAcTMgIyz-RscskastPc5~dA7bpxBqbOBu~QO3bHEwTIdC1~I-LpflDEzaunyJs5YSmCI2niaAo8TJXYL99Iok0UNwU5AM2Xu2QVqs6EFKdAePc~D-OkVbc2LZPCbI8IqBvHLnzvICGVIO26Yw9DX7sUT3lwJnXbFKO~5Lw2m1lTt0eCAWC0K5UG6~eSzrvOdGKMkRsKa5vHboOFvHS~3DITlMJuAruiQ0JYBJDFaRreLSj64Na~lWgp5p7eBlZ6hVbgnffypi5l5Q2JthlkL-3~s7XwN2ElkZNU-ON62voP4MevXh4oTXA__')",
+              "url(\'/images/releases-hero.webp\')",
           }}
         ></div>
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/30 to-background"></div>
@@ -203,13 +184,7 @@ export default function ReleasesProject() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="border-t border-border bg-secondary/30">
-        <div className="mx-auto max-w-5xl px-4 sm:px-8 py-12 flex justify-between items-center flex-wrap gap-4 text-xs text-muted font-light">
-          <span>© {new Date().getFullYear()} Lunacy Media</span>
-          <span>Your Forever Endeavour</span>
-        </div>
-      </footer>
+      
     </div>
   );
 }
