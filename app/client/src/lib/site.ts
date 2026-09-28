@@ -2,8 +2,10 @@
  * Lunacy Media — site-wide content config.
  *
  * STATS: Kyle confirmed (Sept 27, 2026) these are REAL historical figures, and
- * noted the true numbers have since gone up. Refresh the values below before
- * launch — every stat on the site renders from this one object.
+ * noted the true numbers have since gone up. On Sept 28 he asked to OMIT the
+ * stats section entirely until fresh numbers are provided — the homepage
+ * section is parked (see HomeLunar.tsx). When he sends new values, update
+ * below and re-enable the section.
  */
 export const SITE_STATS = [
   {

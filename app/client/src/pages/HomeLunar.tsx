@@ -11,7 +11,6 @@ import {
 import FrameworkTiers from "@/components/FrameworkTiers";
 import GiantMoon from "@/components/GiantMoon";
 import Reveal from "@/components/Reveal";
-import { SITE_STATS } from "@/lib/site";
 
 const PILL_GOLD =
   "inline-flex items-center justify-center gap-2 rounded-full border border-gold/60 bg-black/55 px-8 py-4 text-base font-medium text-gold backdrop-blur-sm transition duration-200 hover:border-gold hover:bg-gold hover:text-black hover:shadow-[0_0_36px_rgba(212,175,55,0.4)]";
@@ -222,30 +221,7 @@ export default function HomeLunar() {
           </div>
         </section>
 
-        {/* ============ STATS ============ */}
-        <section
-          className="relative overflow-hidden border-t border-white/10"
-          aria-label="Studio statistics"
-        >
-          <div
-            className="absolute inset-0 bg-gradient-to-b from-black/85 via-black/45 to-black/85"
-            aria-hidden="true"
-          />
-          <Reveal>
-            <div className="relative mx-auto grid max-w-5xl grid-cols-2 gap-x-6 gap-y-12 px-4 py-24 text-center sm:px-8 sm:py-28 lg:grid-cols-4">
-              {SITE_STATS.map((stat) => (
-                <div key={stat.key}>
-                  <p className="text-gold-shine font-display text-6xl font-medium sm:text-7xl">
-                    {stat.value}
-                  </p>
-                  <p className="mx-auto mt-3 max-w-[12rem] text-sm leading-snug text-mist">
-                    {stat.label}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </Reveal>
-        </section>
+        {/* Stats parked — Kyle asked to omit until fresh numbers are provided. */}
 
         {/* ============ 03 / BEGIN ============ */}
         <section className="relative border-t border-white/10">
