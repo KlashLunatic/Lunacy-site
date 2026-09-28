@@ -2,14 +2,21 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { ArrowRight } from "lucide-react";
 import { useState } from "react";
-import { trpc } from "@/lib/trpc";
 import { toast } from "sonner";
 import { trackEvent } from "@/lib/analytics";
 import { CONTACT_EMAIL } from "@/lib/site";
 
-export default function Contact() {
-  const contactMutation = trpc.contact.submit.useMutation();
+/** Encode form fields for a Netlify Forms submission. */
+function encodeForm(data: Record<string, string>) {
+  return Object.entries(data)
+    .map(
+      ([key, value]) =>
+        `${encodeURIComponent(key)}=${encodeURIComponent(value)}`
+    )
+    .join("&");
+}
 
+export default function Contact() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -20,6 +27,7 @@ export default function Contact() {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showSuccess, setShowSuccess] = useState(false);
+  const [honeypot, setHoneypot] = useState("");
 
   const projectTypes = [
     "Mythos Audit",
@@ -53,15 +61,27 @@ export default function Contact() {
       return;
     }
 
+    if (formData.message.trim().length < 10) {
+      toast.error("Message must be at least 10 characters");
+      return;
+    }
+
     setIsSubmitting(true);
     try {
-      await contactMutation.mutateAsync({
-        name: formData.name,
-        email: formData.email,
-        message: formData.message,
-        projectType: formData.projectType,
-        budgetRange: formData.budgetRange,
+      // Netlify Forms captures the submission — no backend required.
+      const response = await fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: encodeForm({
+          "form-name": "contact",
+          "bot-field": honeypot,
+          ...formData,
+        }),
       });
+
+      if (!response.ok) {
+        throw new Error(`Form submission failed (${response.status})`);
+      }
 
       trackEvent("project_cta_click", "contact_form_submit", "contact");
       toast.success("Message sent! We'll be in touch soon.");
@@ -73,6 +93,7 @@ export default function Contact() {
         projectType: "",
         budgetRange: "",
       });
+      setHoneypot("");
 
       setTimeout(() => {
         setShowSuccess(false);
@@ -124,7 +145,27 @@ export default function Contact() {
             </div>
           )}
 
-          <form onSubmit={handleSubmit} className="space-y-6">
+          <form
+            name="contact"
+            method="POST"
+            data-netlify="true"
+            data-netlify-honeypot="bot-field"
+            onSubmit={handleSubmit}
+            className="space-y-6"
+          >
+            <input type="hidden" name="form-name" value="contact" />
+            <p className="hidden" aria-hidden="true">
+              <label>
+                Don&rsquo;t fill this out if you&rsquo;re human:{" "}
+                <input
+                  name="bot-field"
+                  value={honeypot}
+                  onChange={(e) => setHoneypot(e.target.value)}
+                  tabIndex={-1}
+                  autoComplete="off"
+                />
+              </label>
+            </p>
             <div>
               <label htmlFor="name" className="mb-2 block text-sm text-mist">
                 Your Name *
