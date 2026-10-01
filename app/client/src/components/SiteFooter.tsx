@@ -20,10 +20,15 @@ export default function SiteFooter() {
       />
       <div className="relative mx-auto max-w-6xl px-4 py-16 sm:px-8">
         <div className="flex items-center gap-3">
-          <LunacyMark className="h-8 w-8" />
-          <span className="font-cinzel text-sm font-semibold tracking-[0.32em] text-bone">
-            LUNACY MEDIA
-          </span>
+          <LunacyMark className="h-9 w-auto" />
+          <div>
+            <span className="font-cinzel text-sm font-semibold tracking-[0.32em] text-bone">
+              LUNACY MEDIA
+            </span>
+            <p className="mt-1 font-cinzel text-[10px] font-medium tracking-[0.32em] text-gold">
+              YOUR FOREVER ENDEAVOR
+            </p>
+          </div>
         </div>
         <p className="mt-4 max-w-md text-sm leading-relaxed text-mist">
           The mythology and worldbuilding studio for ambitious storytellers. Based in

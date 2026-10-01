@@ -95,7 +95,7 @@ export default function HomeLunar() {
           />
           <div className="relative mx-auto max-w-5xl px-4 pb-28 pt-24 text-center sm:px-8 sm:pt-36">
             <Reveal>
-              <Eyebrow>Your Forever Endeavour</Eyebrow>
+              <Eyebrow>Your Forever Endeavor</Eyebrow>
             </Reveal>
             <Reveal delay={120}>
               <h1 className="mt-8 font-display text-6xl font-medium leading-[1.04] text-bone sm:text-7xl lg:text-8xl">
@@ -114,7 +114,7 @@ export default function HomeLunar() {
             <Reveal delay={300}>
               <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
                 <Link href="/contact" className={PILL_GOLD}>
-                  Book a Mythos Audit <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                  Start with First Light <ArrowRight className="h-4 w-4" aria-hidden="true" />
                 </Link>
                 <Link href="/work" className={PILL_GHOST}>
                   View Work
@@ -191,24 +191,25 @@ export default function HomeLunar() {
           <div className="relative mx-auto max-w-6xl px-4 py-28 sm:px-8 sm:py-36">
             <div className="text-center">
               <Reveal>
-                <Eyebrow>02 / The Framework</Eyebrow>
+                <Eyebrow>02 / The Offerings</Eyebrow>
               </Reveal>
               <Reveal delay={100}>
                 <h2 className="mx-auto mt-6 max-w-3xl font-display text-5xl font-medium leading-[1.06] text-bone sm:text-6xl">
-                  A simple, <em className="italic text-gold">four-step</em> way to
-                  work together
+                  Three lines of work,{" "}
+                  <em className="italic text-gold">one way in</em>
                 </h2>
               </Reveal>
               <Reveal delay={180}>
                 <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-mist">
-                  From a first conversation to ongoing support — here&rsquo;s exactly
-                  what each stage includes and what it costs.
+                  Artist worlds, small-business brands, and live activations —
+                  every engagement begins with a First Light discovery session,
+                  then builds through creation, preservation, and purification.
                 </p>
               </Reveal>
               <Reveal delay={240}>
                 <div className="mt-8">
                   <Link href="/contact" className={PILL_GOLD}>
-                    Book a Mythos Audit <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                    Start with First Light <ArrowRight className="h-4 w-4" aria-hidden="true" />
                   </Link>
                 </div>
               </Reveal>
@@ -244,7 +245,7 @@ export default function HomeLunar() {
             <Reveal delay={240}>
               <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
                 <Link href="/contact" className={PILL_GOLD}>
-                  Book a Mythos Audit <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                  Start with First Light <ArrowRight className="h-4 w-4" aria-hidden="true" />
                 </Link>
                 <Link href="/contact" className={PILL_GHOST}>
                   Talk to the Studio
@@ -253,8 +254,9 @@ export default function HomeLunar() {
             </Reveal>
             <Reveal delay={300}>
               <p className="mx-auto mt-10 max-w-xl text-[15px] leading-relaxed text-mist">
-                A Mythos Audit is a focused 60-90 minute call where we figure out
-                your story and your clearest next move. No pressure, no obligation.
+                Every engagement begins with First Light — a discovery session
+                that maps your story and your clearest next move. The full fee
+                is credited toward your package.
               </p>
             </Reveal>
           </div>

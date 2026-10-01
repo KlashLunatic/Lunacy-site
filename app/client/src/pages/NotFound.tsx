@@ -17,7 +17,18 @@ export default function NotFound() {
         aria-hidden="true"
       />
       <div className="relative mx-auto flex min-h-[70vh] max-w-2xl flex-col items-center justify-center px-4 py-32 text-center sm:px-8">
-        <p className="font-cinzel text-xs font-semibold tracking-[0.28em] text-gold">
+        {/* The mark, turned over — its other reading */}
+        <img
+          src="/images/lm-monogram-gold.png"
+          alt=""
+          aria-hidden="true"
+          className="h-16 w-auto rotate-180 opacity-60"
+          loading="lazy"
+        />
+        <p className="mt-3 font-cinzel text-[10px] font-medium tracking-[0.3em] text-mist/60">
+          EVERY MARK HAS ANOTHER READING
+        </p>
+        <p className="mt-8 font-cinzel text-xs font-semibold tracking-[0.28em] text-gold">
           404
         </p>
         <h1 className="mt-6 font-display text-6xl font-medium text-bone sm:text-7xl text-balance">

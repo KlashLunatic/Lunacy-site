@@ -30,75 +30,183 @@ export const SITE_STATS = [
   },
 ] as const;
 
-export type Tier = {
-  numeral: string;
-  name: string;
-  tagline: string;
-  description: string;
+export type OfferTier = {
+  phase: string;
+  offer: string;
   price: string;
+  priceNote?: string;
   includes: string[];
 };
 
+export type FirstLight = {
+  name: string;
+  price: string;
+  description: string;
+};
+
+export type ProductLine = {
+  id: string;
+  name: string;
+  description: string;
+  keywords: string[];
+  firstLight: FirstLight;
+  tiers: OfferTier[];
+  bestFit: string;
+};
+
 /**
- * The four-stage framework. Names, descriptions and prices mirror the
- * homepage and the contact form — keep them in sync here.
+ * The three product lines. Mirrors the Lunacy Media offers & pricing sheet
+ * (v2, Oct 2026) — the sheet is the source of truth; keep this in sync.
+ * Discovery-first: every new client enters through a First Light engagement.
  */
-export const TIERS: Tier[] = [
+export const PRODUCT_LINES: ProductLine[] = [
   {
-    numeral: "I",
-    name: "Nebula — Mythos Audit",
-    tagline: "The Awakening",
+    id: "artist-accelerator",
+    name: "Artist Accelerator",
     description:
-      "A focused 60-90 minute session where we diagnose your story and map your clearest next move.",
-    price: "From $150",
-    includes: [
-      "60–90 minute deep-dive session",
-      "Diagnosis of your current story",
-      "Your clearest-next-move map",
-      "No pressure, no obligation",
+      "A connected creative system for motivated artists building sound, image, and momentum.",
+    keywords: ["Music", "Visuals", "Positioning"],
+    firstLight: {
+      name: "Artist Diagnostic",
+      price: "$750",
+      description:
+        "Deep-dive across sound, image, and positioning, with a written roadmap. Full fee credited toward the package.",
+    },
+    tiers: [
+      {
+        phase: "Nebula — Creation",
+        offer: "Artist Launch",
+        price: "Custom scoped",
+        priceNote: "quoted per project",
+        includes: [
+          "5-track extended play (EP): recording, mixing, and mastering",
+          "Artist visual identity: logo, color, and typography",
+          "Electronic press kit (EPK)",
+          "One indie music video",
+        ],
+      },
+      {
+        phase: "Neutron — Preservation",
+        offer: "Artist Momentum",
+        price: "Custom scoped",
+        priceNote: "per month · billed in advance",
+        includes: [
+          "One single per month: record, mix, and master",
+          "Monthly content asset pack: cover art, social templates, and short-form cuts",
+          "Release checklist and distribution guidance",
+        ],
+      },
+      {
+        phase: "Nova — Purification",
+        offer: "Catalog Purification",
+        price: "Custom scoped",
+        priceNote: "quoted per project",
+        includes: [
+          "Catalog audit across sound, visuals, and positioning",
+          "Remaster up to 10 tracks",
+          "Visual identity refresh",
+        ],
+      },
     ],
+    bestFit:
+      "Independent artists ready to treat their career as a coherent world rather than a string of disconnected releases.",
   },
   {
-    numeral: "II",
-    name: "Neutron — Narrative System",
-    tagline: "The Alignment",
+    id: "small-business",
+    name: "Small Business Web & Brand",
     description:
-      "We build your identity, story, and voice into one clear system your whole brand can run on.",
-    price: "From $2,500",
-    includes: [
-      "Brand story bible — story, characters, rules",
-      "Identity, voice and messaging system",
-      "One shared playbook for every collaborator",
-      "Direction that stays consistent across releases",
+      "A credible, useful digital presence for owner-operated businesses ready to grow with intention.",
+    keywords: ["Brand", "Website", "Local Search"],
+    firstLight: {
+      name: "Brand & Web Audit",
+      price: "$950",
+      description:
+        "Audit of brand, website, and local search, with written findings and next steps. Full fee credited toward the package.",
+    },
+    tiers: [
+      {
+        phase: "Nebula — Creation",
+        offer: "Business Launch",
+        price: "Custom scoped",
+        priceNote: "quoted per project",
+        includes: [
+          "5–10 page website: design, build, and search engine optimization (SEO) foundation",
+          "Logo and mini identity: colors, fonts, and usage",
+          "Google Business Profile and citations setup",
+        ],
+      },
+      {
+        phase: "Neutron — Preservation",
+        offer: "Growth Care",
+        price: "Custom scoped",
+        priceNote: "per month · billed in advance",
+        includes: [
+          "Site maintenance and hosting management",
+          "Local SEO: Google Business Profile, citations, and on-page optimization",
+          "Two content pieces per month",
+        ],
+      },
+      {
+        phase: "Nova — Purification",
+        offer: "Brand Refresh",
+        price: "Custom scoped",
+        priceNote: "quoted per project",
+        includes: [
+          "Brand and website audit",
+          "Identity refresh and site updates",
+        ],
+      },
     ],
+    bestFit:
+      "Mom-and-pop businesses that need a polished, maintainable brand and website without building an internal creative team.",
   },
   {
-    numeral: "III",
-    name: "Nova — World Build",
-    tagline: "The Becoming",
+    id: "brand-activations",
+    name: "Brand Activations",
     description:
-      "The full package: identity, story, visuals, and a ready-to-launch creative system, built end to end.",
-    price: "From $10,000",
-    includes: [
-      "Everything in Narrative System",
-      "Visual identity and symbolic system",
-      "Music, visuals and interactive deliverables",
-      "Launch-ready creative system, end to end",
+      "Activations built as experiences — creative direction, production, and amplification as one system.",
+    keywords: ["Concept", "Production", "Amplification"],
+    firstLight: {
+      name: "Activation Concept Sprint",
+      price: "$1,500",
+      description:
+        "Working session on concept territory, audience, and format, with a concept brief. Full fee credited toward the activation.",
+    },
+    tiers: [
+      {
+        phase: "Nebula — Creation",
+        offer: "Activation",
+        price: "Custom scoped",
+        priceNote: "quoted per project",
+        includes: [
+          "Concept and creative direction",
+          "Production, staffing, and permits",
+          "Social and public relations amplification",
+        ],
+      },
+      {
+        phase: "Neutron — Preservation",
+        offer: "Post-Activation Content Engine",
+        price: "Custom scoped",
+        priceNote: "per month · billed in advance",
+        includes: [
+          "Turn event capture into a sustained social content stream",
+          "Maintain campaign narrative after the physical moment ends",
+        ],
+      },
+      {
+        phase: "Nova — Purification",
+        offer: "Activation Retrospective + Brand Tune-Up",
+        price: "Custom scoped",
+        priceNote: "quoted per project",
+        includes: [
+          "Review execution, audience response, and reusable assets",
+          "Translate learnings into sharper brand and campaign direction",
+        ],
+      },
     ],
-  },
-  {
-    numeral: "IV",
-    name: "Orbit — Ongoing Direction",
-    tagline: "The Continuum",
-    description:
-      "Monthly creative direction to keep everything consistent and moving after launch.",
-    price: "From $750/mo",
-    includes: [
-      "Monthly creative direction",
-      "Consistency across every release and asset",
-      "Fast turnaround on new deliverables",
-      "A standing creative partner, not a vendor",
-    ],
+    bestFit:
+      "Reserve 20–30% of the total activation budget for social and PR amplification — that is the part that makes the moment outlive the night.",
   },
 ];
 

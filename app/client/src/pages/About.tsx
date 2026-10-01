@@ -92,9 +92,9 @@ export default function About() {
 
           <div className="flex flex-col items-center justify-center">
             <img
-              src="/images/lunacy-symbol.webp"
-              alt="Lunacy Media logo — a metallic gold 'lm' monogram"
-              className="w-64 h-64 object-contain" loading="lazy"
+              src="/images/lm-monogram-gold.png"
+              alt="Lunacy Media logo — the LM monogram; turned over, it becomes a trishul"
+              className="w-48 h-48 object-contain" loading="lazy"
             />
             <p className="text-xs text-muted uppercase tracking-widest font-medium mt-6 text-center">
               Cycles • Reflection • Transformation

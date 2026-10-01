@@ -30,10 +30,11 @@ export default function Contact() {
   const [honeypot, setHoneypot] = useState("");
 
   const projectTypes = [
-    "Mythos Audit",
-    "Narrative System",
-    "World Build",
-    "Ongoing Direction",
+    "First Light discovery session",
+    "Artist Accelerator",
+    "Small Business Web & Brand",
+    "Brand Activations",
+    "À la carte project",
     "Something else",
   ];
 
@@ -209,7 +210,7 @@ export default function Contact() {
                 onChange={handleChange}
                 className="w-full rounded-lg border border-white/15 bg-black/40 px-4 py-3 text-bone focus:border-gold focus:outline-none"
               >
-                <option value="">Select a stage</option>
+                <option value="">Select an offering</option>
                 {projectTypes.map((type) => (
                   <option key={type} value={type}>
                     {type}

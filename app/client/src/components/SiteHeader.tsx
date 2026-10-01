@@ -1,12 +1,12 @@
 /**
- * LunacyMark — the real Lunacy Media monogram (metallic gold "lm").
- * Replaces the old crescent-moon emblem everywhere the brand mark appears.
+ * LunacyMark — the Lunacy Media monogram (gold "lm"; turned over it reads
+ * as a trishul). Replaces the old emblem everywhere the brand mark appears.
  */
-export function LunacyMark({ className = "h-8 w-8" }: { className?: string }) {
+export function LunacyMark({ className = "h-8 w-auto" }: { className?: string }) {
   return (
     <img
-      src="/images/lunacy-symbol.webp"
-      alt="Lunacy Media logo — a metallic gold 'lm' monogram"
+      src="/images/lm-monogram-gold.png"
+      alt="Lunacy Media logo — the LM monogram; turned over, it becomes a trishul"
       className={`${className} object-contain`}
       loading="eager"
     />
@@ -25,7 +25,7 @@ export default function SiteHeader() {
         aria-label="Primary"
       >
         <a href="/" className="group flex items-center gap-3" aria-label="Lunacy Media — home">
-          <LunacyMark className="h-8 w-8 transition duration-500 group-hover:[filter:drop-shadow(0_0_10px_rgba(212,175,55,0.55))]" />
+          <LunacyMark className="h-9 w-auto transition duration-500 group-hover:[filter:drop-shadow(0_0_10px_rgba(212,175,55,0.55))]" />
           <span className="font-cinzel text-sm font-semibold tracking-[0.32em] text-bone">
             LUNACY MEDIA
           </span>
